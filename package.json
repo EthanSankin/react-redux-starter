@@ -1,11 +1,19 @@
 {
   "name": "react-starter-pack",
   "version": "1.0.0",
-  "description": "React starter pack with react-router, redux, and redux saga",
+  "description": "React starter pack with react-router, redux and redux saga. Jest and Enzyme for testing",
   "main": "index.js",
   "scripts": {
-    "build": "babel src/ --copy-files --out-dir ./build/public",
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline",
+    "test": "jest"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./src/setupTests.js"
+    ]
   },
   "author": "Eytan Sankin",
   "license": "ISC",
@@ -14,16 +22,23 @@
     "react-dom": "^16.6.1",
     "react-redux": "^5.1.0",
     "react-router": "^4.3.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "react-hot-loader": "^4.3.12",
     "style-loader": "^0.23.1",
     "webpack": "^4.25.1",
